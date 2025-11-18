@@ -90,37 +90,31 @@ const Navbar = () => {
                     {loading ?
                         <SkeletonCircle size={10} />
                         :
-                        <>
-                            <Menu.Root>
-                                <Menu.Trigger asChild>
+                        <Menu.Root>
+                            <Menu.Trigger asChild>
                                 <Button variant="plain" size="sm">
-                                    <Avatar.Root>
+                                    <Avatar.Root colorPalette={'blue'}>
                                         <Avatar.Fallback name={`${user?.name}`} />
                                     </Avatar.Root>
-                                Open
                                 </Button>
                             </Menu.Trigger>
                             <Portal>
                                 <Menu.Positioner>
                                 <Menu.Content>
-                                    <Menu.Item value="new-txt">New Text File</Menu.Item>
-                                    <Menu.Item value="new-file">New File...</Menu.Item>
-                                    <Menu.Item value="new-win">New Window</Menu.Item>
-                                    <Menu.Item value="open-file">Open File...</Menu.Item>
-                                    <Menu.Item value="export">Export</Menu.Item>
+                                    <Menu.Item value="new-txt">New Text File fyjtyjtuyjytu</Menu.Item>
+                                    <Menu.Item value="new-file">New File..................</Menu.Item>
+                                    <Menu.Item value="new-win">New Window hrtyr6tuiyilkuil</Menu.Item>
+                                    <Menu.Item value="open-file">Open File.................</Menu.Item>
+                                    <Menu.Item value="export">Export fgbfhnfghnfghnfgnhgfhn</Menu.Item>
+                                    <Button onClick={logout} display={{ base: 'none' , md:"flex" }} variant="plain" color={"red"}>
+                                        <RiLogoutCircleRLine />
+                                        Logout    
+                                    </Button>
                                 </Menu.Content>
                                 </Menu.Positioner>
                             </Portal>
-                            </Menu.Root>
-                            <Avatar.Root colorPalette={'blue'}>
-                                <Avatar.Fallback name={`${user?.name}`} />
-                            </Avatar.Root>
-                        </>
+                        </Menu.Root>
                     }
-                    <Button onClick={logout} display={{ base: 'none' , md:"flex" }} variant="plain" color={"red"}>
-                        <RiLogoutCircleRLine />
-                        Logout
-                    </Button>
                 </HStack>
             </HStack>
             {open ? (

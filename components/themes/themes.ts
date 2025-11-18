@@ -54,7 +54,14 @@ const button = defineRecipe({
     base: {
         borderRadius: "md",
         fontWeight: "bold",
-        cursor: "pointer"
+        cursor: "pointer",
+
+        // REMOVE focus ring
+        _focus: { boxShadow: "none" },
+        _focusVisible: {
+            outline: "0",
+            boxShadow: "0 0 0 2px rgba(255,255,255,0.2)", // subtle ring
+        },
     },
     variants: {
         variant: {
