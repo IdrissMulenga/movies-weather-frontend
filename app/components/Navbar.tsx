@@ -8,7 +8,7 @@ import { useQuery } from "@apollo/client/react"
 import { RiLogoutCircleRLine, RiDashboardFill, RiMovieFill } from "react-icons/ri"
 import { GiHamburgerMenu } from "react-icons/gi";
 import { IoCloseCircle } from "react-icons/io5";
-import { Avatar, Box, HStack, Text, Button, SkeletonCircle, Span, Heading, IconButton, Stack, Icon } from "@chakra-ui/react"
+import { Avatar, Box, HStack, Text, Button, SkeletonCircle, Span, Heading, IconButton, Stack, Icon, Menu, Portal } from "@chakra-ui/react"
 import {motion} from "motion/react";
 
 
@@ -89,15 +89,32 @@ const Navbar = () => {
                 <HStack>
                     {loading ?
                         <SkeletonCircle size={10} />
-                        : 
-                        <Avatar.Root colorPalette={'blue'}>
-                            <Avatar.Fallback name={`${user?.name}`} />
-                        </Avatar.Root>
+                        :
+                        <Menu.Root>
+                            <Menu.Trigger asChild>
+                                <Button variant="plain" size="sm">
+                                    <Avatar.Root colorPalette={'blue'}>
+                                        <Avatar.Fallback name={`${user?.name}`} />
+                                    </Avatar.Root>
+                                </Button>
+                            </Menu.Trigger>
+                            <Portal>
+                                <Menu.Positioner>
+                                <Menu.Content>
+                                    <Menu.Item value="new-txt">New Text File fyjtyjtuyjytu</Menu.Item>
+                                    <Menu.Item value="new-file">New File..................</Menu.Item>
+                                    <Menu.Item value="new-win">New Window hrtyr6tuiyilkuil</Menu.Item>
+                                    <Menu.Item value="open-file">Open File.................</Menu.Item>
+                                    <Menu.Item value="export">Export fgbfhnfghnfghnfgnhgfhn</Menu.Item>
+                                    <Button onClick={logout} display={{ base: 'none' , md:"flex" }} variant="plain" color={"red"}>
+                                        <RiLogoutCircleRLine />
+                                        Logout    
+                                    </Button>
+                                </Menu.Content>
+                                </Menu.Positioner>
+                            </Portal>
+                        </Menu.Root>
                     }
-                    <Button onClick={logout} display={{ base: 'none' , md:"flex" }} variant="plain" color={"red"}>
-                        <RiLogoutCircleRLine />
-                        Logout
-                    </Button>
                 </HStack>
             </HStack>
             {open ? (
