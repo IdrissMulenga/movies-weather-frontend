@@ -10,10 +10,9 @@ const httpLink = new HttpLink({
 });
 
 const client = new ApolloClient({
-
     // apollo client pipeline
     link: ApolloLink.from([httpLink]),
-    cache: new InMemoryCache(), //apollo buiLt in cache engine
+    cache: new InMemoryCache(), //apollo built in cache engine
     defaultOptions: {
         watchQuery: { fetchPolicy: "cache-and-network" }, //cached data immediately, then refresh from network.
         query: { fetchPolicy: "network-only" },
