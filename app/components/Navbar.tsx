@@ -5,7 +5,7 @@ import { GET_USER } from "@/libs/graphql"
 import { signOut } from "next-auth/react"
 import { usePathname } from "next/navigation"
 import { useQuery } from "@apollo/client/react"
-import { RiLogoutCircleRLine, RiDashboardFill, RiMovieFill } from "react-icons/ri"
+import { RiLogoutCircleRLine, RiDashboardFill, RiMovieFill, RiSettings5Fill } from "react-icons/ri"
 import { GiHamburgerMenu } from "react-icons/gi";
 import { IoCloseCircle } from "react-icons/io5";
 import { Avatar, Box, HStack, Text, Button, SkeletonCircle, Span, Heading, IconButton, Stack, Icon, Menu, Portal } from "@chakra-ui/react"
@@ -100,7 +100,16 @@ const Navbar = () => {
                             </Menu.Trigger>
                             <Portal>
                                 <Menu.Positioner>
-                                <Menu.Content>
+                                    <Menu.Content>
+                                        <Heading size="md" mb={2}>{user?.name}</Heading>
+                                        <Text>
+                                            <RiSettings5Fill />
+                                            <Span ml={2}>
+                                                <Link href="/pages/settings">
+                                                    Settings
+                                                </Link>
+                                            </Span>
+                                        </Text>
                                     <Menu.Item value="new-txt">New Text File fyjtyjtuyjytu</Menu.Item>
                                     <Menu.Item value="new-file">New File..................</Menu.Item>
                                     <Menu.Item value="new-win">New Window hrtyr6tuiyilkuil</Menu.Item>
