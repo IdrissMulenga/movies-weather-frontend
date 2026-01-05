@@ -1,10 +1,10 @@
-import React from 'react'
+import { Box, Text } from "@chakra-ui/react"
 
 const page = () => {
   return (
-    <div>
-      
-    </div>
+    <Box>
+      <Text>Settings Movie App</Text>
+    </Box>
   )
 }
 
