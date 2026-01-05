@@ -103,7 +103,7 @@ export const themeSystem = createSystem(defaultConfig, {
     },
     globalCss: {
         "html, body": {
-            bg: "black",
+            // bg: "black",
             backgroundImage: `
                 radial-gradient(circle at center, #00063d40, transparent 70%)
             `,

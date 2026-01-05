@@ -5,6 +5,7 @@ import { CiLock } from "react-icons/ci"
 import { PasswordInput } from './../../../components/ui/password-input';
 import Link from "next/link";
 import useLogin from "@/app/hooks/useLogin";
+import { ColorModeButton } from "@/components/ui/color-mode";
 
 const LoginForm = () => {
     const {formik, isLoading} = useLogin()
@@ -16,7 +17,8 @@ const LoginForm = () => {
             p={6} alignItems='center'
             rounded='2xl'
         >
-            <Heading textAlign="center" pb={6} fontWeight="bold">Login to Cine<Span color="red.500" fontStyle="italic">Cast</Span></Heading>
+            <ColorModeButton />
+            <Heading textAlign="center" pb={6} fontWeight="bold" >Login to Cine<Span color="red.500" fontStyle="italic">Cast</Span></Heading>
             <form noValidate onSubmit={formik.handleSubmit}>
                 <Field.Root required mb={6}>
                     <Field.Label>
@@ -78,9 +80,9 @@ const LoginForm = () => {
                     </Button>
                 </Grid>
                 <Link href='/auth/signup'>
-                    <Text textAlign="center" pt={4} color="gray.300">
+                    <Text textAlign="center" pt={4}>
                         {"Don't have an account?"}
-                        <Span color="#ba0505ff" pl={2}>
+                        <Span fontWeight={"bold"} color="#ba0505ff" pl={2}>
                             Create here
                         </Span>
                     </Text>

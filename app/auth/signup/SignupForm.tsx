@@ -21,7 +21,7 @@ const SignupForm = () => {
             <form noValidate onSubmit={handleSubmit}>
                 <Field.Root required mb={4}>
                     <Field.Label>
-                        <Text fontWeight='bold'>name</Text>
+                        <Text color="gray.300" fontWeight='bold'>full name</Text>
                         <Field.RequiredIndicator />
                     </Field.Label>
                     <InputGroup flex='1' startElement=''>
@@ -120,7 +120,7 @@ const SignupForm = () => {
                     <Grid>
                         <Button
                             disabled={isLoading}
-                            loadingText="signing up and redirectin....."
+                            loadingText="signing up....."
                             loading={isLoading}
                             type="submit"
                         >
@@ -128,9 +128,9 @@ const SignupForm = () => {
                         </Button>
                     </Grid>
                 <Link href='/'>
-                    <Text textAlign="center" pt={4} color="gray.300">
+                    <Text textAlign="center" pt={4}>
                         already have an account?
-                        <Span color="#ba0505ff" pl={2}>
+                        <Span fontWeight={"bold"} color="#ba0505ff" pl={2}>
                             login here
                         </Span>
                     </Text>
